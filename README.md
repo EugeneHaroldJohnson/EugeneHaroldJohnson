@@ -12,7 +12,7 @@
 
 ⚡ Fun fact: My company was established just one day after my 34th birthday!
 
-🌎 Be sure to vsit my website https://www.eugeneharoldjohnson.com
+🌎 Be sure to visit my website https://www.eugeneharoldjohnson.com
 
 ---
 
