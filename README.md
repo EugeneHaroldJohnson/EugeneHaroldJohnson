@@ -12,6 +12,11 @@
 
 ⚡ Fun fact: My company was established just one day after my 34th birthday!
 
+🌎 Be sure to vsit my website https://www.eugeneharoldjohnson.com
+
 ---
 
-EugeneHaroldJohnson/EugeneHaroldJohnson is a ✨ special ✨ repository 
+<!---
+EugeneHaroldJohnson/EugeneHaroldJohnson is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
