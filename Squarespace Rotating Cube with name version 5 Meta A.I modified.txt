@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes rotate {
+  from {
+    transform: rotateX(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+#cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, #f0f0f0, #ccc);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  backface-visibility: hidden;
+  border: 1px solid #ddd;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Added some flair */
+#cube:hover {
+  animation-duration: 5s;
+  transform: scale(1.1);
+}
+
+.face::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  z-index: -1;
+}
+
+</style>
+</head>
+<body>
+<div id="cube">
+  <div class="face front">Welcome to <br>Eugene Harold Johnson's<br>Squarespace page</div>
+  <div class="face back">Explore my creative <br>space and let's connect!</div>
+  <div class="face right">Where art and tech <br>meet...</div>
+  <div class="face left">Discover new ideas <br>and inspiration!</div>
+  <div class="face top">Let's create something <br>amazing together!</div>
+  <div class="face bottom">Thanks for visiting!</div>
+</div>
+</body>
+</html>

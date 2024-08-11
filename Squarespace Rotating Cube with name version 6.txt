@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes rotate {
+  from {
+    transform: rotateX(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+#cube {
+  width: 200px;
+  height: 200px;
+  position: absolute; /* Changed to absolute for dragging */
+  transform-style: preserve-3d;
+  animation: rotate 5s infinite linear;
+  cursor: grab; /* Change cursor to indicate draggable element */
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  backface-visibility: hidden; /* Ensure text is not mirrored */
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+</style>
+</head>
+<body>
+
+<div id="cube">
+  <div class="face front">Welcome to Eugene Harold Johnson's Squarespace page</div>
+  <div class="face back">Welcome to Eugene Harold Johnson's Squarespace page</div>
+  <div class="face right">Welcome to Eugene Harold Johnson's Squarespace page</div>
+  <div class="face left">Welcome to Eugene Harold Johnson's Squarespace page</div>
+  <div class="face top">Welcome to Eugene Harold Johnson's Squarespace page</div>
+  <div class="face bottom">Welcome to Eugene Harold Johnson's Squarespace page</div>
+</div>
+
+<script>
+let cube = document.getElementById('cube');
+let isDragging = false;
+let offsetX, offsetY;
+
+cube.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  offsetX = e.clientX - cube.offsetLeft;
+  offsetY = e.clientY - cube.offsetTop;
+  cube.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    cube.style.left = `${e.clientX - offsetX}px`;
+    cube.style.top = `${e.clientY - offsetY}px`;
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  cube.style.cursor = 'grab';
+});
+</script>
+
+</body>
+</html>
